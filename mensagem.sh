@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+#
 #===============================================================================
 #
 # File...........: mensagem.sh
@@ -31,17 +32,13 @@
 #
 #===============================================================================
 
-# Token do seu bot do Telegram
-TELEGRAM_BOT_TOKEN="SEU_TOKEN_AQUI"
-
-# ID do chat ou usuário para o qual você deseja enviar a mensagem
+# Defina seu token de acesso aqui
+TOKEN="SEU_TOKEN_AQUI"
+# Defina o ID do chat para onde você deseja enviar a mensagem
 CHAT_ID="ID_DO_CHAT_AQUI"
-
-# Mensagem a ser enviada
+# Mensagem a ser enviada (certifique-se de escapar caracteres especiais)
 MESSAGE="$*"
 
-# URL de envio da mensagem
-URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+# Envie a mensagem usando a API do Telegram
+curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="$MESSAGE" >/dev/null
 
-# Envia a mensagem usando curl
-curl -s -X POST $URL -d chat_id=$CHAT_ID -d text="$MESSAGE"
