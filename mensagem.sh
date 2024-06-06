@@ -34,8 +34,10 @@
 
 # Defina seu token de acesso aqui
 TOKEN="SEU_TOKEN_AQUI"
+
 # Defina o ID do chat para onde você deseja enviar a mensagem
 CHAT_ID="ID_DO_CHAT_AQUI"
+
 # Mensagem a ser enviada (certifique-se de escapar caracteres especiais)
 MESSAGE="$*"
 
